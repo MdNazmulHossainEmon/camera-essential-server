@@ -18,6 +18,7 @@ async function run() {
     const ProductsCollection = database.collection('products');
     const reviewsCollection = database.collection('reviews');
     const purchasesCollection = database.collection("purchase");
+    const usersCollection = database.collection("users");
     // const ordersCollection = database.collection("orders");
 
     //   GET PRODUCT 
@@ -99,6 +100,16 @@ async function run() {
     })
 
 // =============================== admin level access try============================
+
+
+app.post('/users', async (req, res) => {
+  const user = req.body;
+  const result = await usersCollection.insertOne(user);
+  console.log('hit the post')
+  console.log(result);
+  res.json(result)
+})
+
 
 
 
