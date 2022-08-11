@@ -18,7 +18,6 @@ async function run() {
     const ProductsCollection = database.collection('products');
     const reviewsCollection = database.collection('reviews');
     const purchasesCollection = database.collection("purchase");
-   
 
     //   GET PRODUCT 
     app.get("/products", async (req, res) => {
@@ -97,10 +96,6 @@ async function run() {
       console.log("deleting order with id", result);
       res.json(result);;
     })
-
-
-
-
 
 
     console.log("database connected");
